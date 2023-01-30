@@ -2,6 +2,7 @@ package com.maripavlova.springbootconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +30,9 @@ public class ParameterController {
     @Autowired
     private DbSettings dbSettings;
 
+    @Autowired
+    private Environment environment;
+
     @GetMapping("/app-info")
     public String getApplicationInformation(){
         return app_description;
@@ -52,5 +56,10 @@ public class ParameterController {
     @GetMapping("/config-prop")
     public String getDbInfo() {
         return dbSettings.getDbValues() + dbSettings.getPort() + dbSettings.isStatus();
+    }
+
+    @GetMapping("env-details")
+    public String getEnvDetails() {
+        return environment.toString();
     }
 }
