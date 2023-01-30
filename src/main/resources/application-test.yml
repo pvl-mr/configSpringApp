@@ -4,9 +4,8 @@ mari:
   list: One,Two,Three
   dbValues: "{connection_string: 'http://db/slkm', user: 'mari', password: 431}"
 db:
-  dbValues: "{connection_string: 'http://db/slkm', user: 'mari', password: 431}"
+  dbValues: "{connection_string: 'http://test-db/slkm', user: 'mari', password: 431}"
   port: 5432
   status: true
 
 management.endpoints.web.exposure.include: "*"
-spring.profiles.active: test
