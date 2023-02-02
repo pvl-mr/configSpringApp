@@ -2,11 +2,11 @@ mari:
   parameter: sunrise time
   description: app for getting ${mari.parameter} parameter
   list: One,Two,Three
-  dbValues: "{connection_string: 'http://db/slkm', user: 'mari', password: 431}"
-db:
-  dbValues: "{connection_string: 'http://db/slkm', user: 'mari', password: 431}"
-  port: 5432
-  status: true
+
 
 management.endpoints.web.exposure.include: "*"
-spring.profiles.active: test
+
+spring.cloud.config.uri: http://localhost:8888
+
+spring.application.name: spring-config-client
+
